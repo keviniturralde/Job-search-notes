@@ -1,0 +1,26 @@
+“Big O notation is a mathematical notation that describes the limiting behavior of a function when the argument tends towards a particular value or infinity. It is a member of a family of notations invented by Paul Bachmann, Edmund Landau, and others, collectively called Bachmann–Landau notation or asymptotic notation.”
+— Wikipedia’s definition of Big O notation
+In plain words, Big O notation describes the complexity of your code using algebraic terms.
+
+To understand what Big O notation is, we can take a look at a typical example, O(n²), which is usually pronounced “Big O squared”. The letter “n” here represents the input size, and the function “g(n) = n²” inside the “O()” gives us an idea of how complex the algorithm is with respect to the input size.
+
+A typical algorithm that has the complexity of O(n²) would be the selection sort algorithm. Selection sort is a sorting algorithm that iterates through the list to ensure every element at index i is the ith smallest/largest element of the list. The CODEPEN below gives a visual example of it.
+
+SelectionSort(List) {
+  for(i from 0 to List.Length) {
+    SmallestElement = List[i]
+    for(j from i to List.Length) {
+      if(SmallestElement > List[j]) {
+        SmallestElement = List[j]
+      }
+    }
+    Swap(List[i], SmallestElement)
+  }
+}
+
+
+In this scenario, we consider the variable List as the input, thus input size n is the number of elements inside List. Assume the if statement, and the value assignment bounded by the if statement, takes constant time. Then we can find the big O notation for the SelectionSort function by analyzing how many times the statements are executed.
+
+First the inner for loop runs the statements inside n times. And then after i is incremented, the inner for loop runs for n-1 times… …until it runs once, then both of the for loops reach their terminating conditions.
+
+
