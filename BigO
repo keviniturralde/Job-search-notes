@@ -24,3 +24,10 @@ In this scenario, we consider the variable List as the input, thus input size n 
 First the inner for loop runs the statements inside n times. And then after i is incremented, the inner for loop runs for n-1 times… …until it runs once, then both of the for loops reach their terminating conditions.
 
 
+big-O notation
+(definition)
+
+Definition: A theoretical measure of the execution of an algorithm, usually the time or memory needed, given the problem size n, which is usually the number of items. Informally, saying some equation f(n) = O(g(n)) means it is less than some constant multiple of g(n). The notation is read, "f of n is big oh of g of n".
+
+Formal Definition: f(n) = O(g(n)) means there are positive constants c and k, such that 0 ≤ f(n) ≤ cg(n) for all n ≥ k. The values of c and k must be fixed for the function f and must not depend on n.
+graph showing relation between a function, f, and the limit function, g
