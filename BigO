@@ -31,3 +31,14 @@ Definition: A theoretical measure of the execution of an algorithm, usually the 
 
 Formal Definition: f(n) = O(g(n)) means there are positive constants c and k, such that 0 ≤ f(n) ≤ cg(n) for all n ≥ k. The values of c and k must be fixed for the function f and must not depend on n.
 graph showing relation between a function, f, and the limit function, g
+
+Big O runtimes are heavily generalized. We typically default to using the variable n as the input that our algorithm receives. Although we will never know exactly what the input’s size is, we must assume that it is extremely large.
+We take the most expensive set of computations around a block of code and revolve the efficiency of the algorithm based around that.
+At the end of this article, we will be able to make an expression that includes the runtime for the majority of computations within a certain block of code.
+Here’s an example expression of what we might see:
+O(n) + O(n^2) + O(1)
+In this expression, we take the runtime with the heaviest cost and call that the Big O runtime of the algorithm. In this imaginary example, the runtime is O(n²) as that computation is what will take the most time in the given expression.
+But wait…what is n in this example? When specifying a runtime, it is just as important to clarify what n refers to. In this example, we can say something along the lines of: “The runtime would be O(n²) where n is the length of our input array”.
+In layman’s terms, we can say that that Big O is a way to measure how something performs given an N input.
+Another rule of thumb when dealing with Big O: we drop constants in our expression. For example, O(n) + O(n) + O(n) will turn into O(3n), but we never actually claim our runtime to be O(3n). Instead, we simply call it to be O(n).
+Now that we have a basic understanding of different complexities, let’s examine a few of the common runtimes to see how they might look in code.
